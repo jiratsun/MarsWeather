@@ -1,0 +1,72 @@
+<!-- splasher  -->
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <img src="assets\5ae962d7455ee_thumb900.jpg">
+  </div>
+</div>
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Weather
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="home">
+  <ion-slides *ngIf='hasData' pager="false" dir="rtl" [options]="slideOpts1">
+    <ion-slide *ngFor="let sol of showThisArr" class="slide">
+
+            <ion-grid class="weatherGrid" fixed>
+              <ion-row class="row1">
+                <ion-col size=7 class="col1">
+                  <ion-label dir="ltr" class="atmostemp">  {{sol.atmospheric_temp}}&deg;  </ion-label>
+                </ion-col>
+
+
+                <ion-col [ngSwitch]="sol.season" class="col2">
+                  <div *ngSwitchCase="'summer'"><ion-icon src='../../assets/sun.svg'></ion-icon></div>
+                  <div *ngSwitchCase="'winter'"><ion-icon src='../../assets/wind.svg'></ion-icon></div>
+                  <div *ngSwitchCase="'spring'"><ion-icon src='../../assets/lavender.svg'></ion-icon></div>
+                  <div *ngSwitchCase="'fall'"><ion-icon src='../../assets/maple-leaf.svg'></ion-icon></div>
+                  <ion-label class="season"> {{sol.season}} </ion-label>
+                </ion-col>
+              </ion-row>
+              
+
+              <ion-row class="row2">
+                <ion-label class="sol"> SOL {{sol.Sol}} </ion-label>              
+              </ion-row>
+              
+
+              <ion-row class="row3">
+                <ion-col class="value">
+                  <div class="div"><ion-label> {{sol.atmospheric_pressure}} </ion-label></div>
+                  <div class="div"><ion-label> {{sol.horizontal_wind_speed}} </ion-label></div>
+                  <div class="div"><ion-label> {{sol.wind_direction}} </ion-label></div>
+                </ion-col>
+
+                <ion-col class="col3">
+                  <ion-item class="item">
+                    <ion-avatar slot="end"><img src="../../assets/pressure.svg" class='img'></ion-avatar>
+                    <ion-label class='label'> Atm. Pressure </ion-label>
+                  </ion-item>
+                  
+                  <ion-item class="item">
+                    <ion-avatar slot="end"><img src="../../assets/acceleration.svg"></ion-avatar>
+                    <ion-label class='label'> Wind Speed </ion-label>
+                  </ion-item>
+
+                  <ion-item class="item">
+                    <ion-avatar slot="end"><img src="../../assets/compass.svg"></ion-avatar>
+                    <ion-label class='label'> Wind Direction </ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+

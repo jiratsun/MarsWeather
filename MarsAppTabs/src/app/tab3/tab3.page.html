@@ -1,0 +1,39 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      History
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="home">
+  <ion-slides [options]="slideOpts3">
+    <!-- <button (click)="checkData()">click</button>
+      <button (click)="getData()">get</button> -->
+    <ion-slide *ngFor="let sol of history">
+      <!-- <h1>{{sol.sol_date}}</h1> -->
+      <ion-card class="card1">
+        <ion-row no-padding>
+          <ion-col>
+            <ion-card class="card2"> SOL {{sol.Sol}} </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card class="card3"> {{sol.atmospheric_temp}}&deg; </ion-card>
+            <ion-card class="card3"> {{sol.season}} </ion-card>
+          </ion-col>
+        </ion-row>
+        <div>
+          <ion-row justify-content-center>
+            <div class="card4">
+              Horizontal Wind Speed: {{sol.horizontal_wind_speed}}
+            </div>
+            <div class="card4">
+              Atmospheric Pressure: {{sol.atmospheric_pressure}}
+            </div>
+            <div class="card4">Wind Direction: {{sol.wind_direction}}</div>
+          </ion-row>
+        </div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,30 @@
+.home {
+    --background: transparent;
+    background: url('../../assets/1193006.jpg');
+    background-size: cover;
+}
+
+ion-slides {
+    height: 611px;
+}
+
+.card1 {
+    --background: rgba(0,0,0,0.3)
+}
+
+.card2 {
+    font-size: 40px;
+}
+
+.card3 {
+    font-size: 32px;
+}
+
+.card4 {
+    font-size: 16px;
+}
+
+ion-card {
+    color: rgba(255,255,255,0.6);
+}
+
